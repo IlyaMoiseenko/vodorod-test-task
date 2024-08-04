@@ -43,4 +43,11 @@ public class RateController {
                         .build()
                 );
     }
+
+    @GetMapping("/{curr-id}")
+    public ResponseEntity<Rate> getRateByIdAndDate(@PathVariable(name = "curr-id") int id,
+                                                   @RequestParam(name = "date") LocalDate date) {
+
+        return ResponseEntity.ok(rateService.loadRateByIdAndDate(id, date));
+    }
 }

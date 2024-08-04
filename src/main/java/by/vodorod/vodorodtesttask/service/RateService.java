@@ -22,4 +22,8 @@ public class RateService {
 
         return rateRepository.saveAll(ratesByDate);
     }
+
+    public Rate loadRateByIdAndDate(int id, LocalDate date) {
+        return nationalBankApiClient.getRateByIdAndDate(id, date);
+    }
 }
